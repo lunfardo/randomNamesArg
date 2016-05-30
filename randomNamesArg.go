@@ -18,8 +18,10 @@ func FetchNyS()string  {
      
              
    //Abrimos los archivos
-   fileNombres, err := os.Open("./listadoNombres.txt")
-   fileApellidos, err := os.Open("./listadoApellidos.txt")
+   dir:=fmt.Sprintf("%s\\src\\github.com\\lunfardo\\randomNamesArg\\",os.Getenv("GOPATH"))
+   
+   fileNombres, err := os.Open(dir+"listadoNombres.txt")
+   fileApellidos, err := os.Open(dir+"listadoApellidos.txt")
    if err != nil {
     fmt.Printf("error opening file: %v\n",err)
     os.Exit(1)
